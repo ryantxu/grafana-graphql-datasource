@@ -1,0 +1,36 @@
+{
+  "type": "datasource",
+  "name": "GraphQL",
+  "id": "lapnap-graphql-datasource",
+
+  "metrics": true,
+
+  "info": {
+    "description": "GraphQL",
+    "author": {
+      "name": "Ryan"
+    },
+    "keywords": ["files", "csv"],
+    "logos": {
+      "small": "img/GraphQL.svg",
+      "large": "img/GraphQL.svg"
+    },
+    "links": [
+      {"name": "Project site", "url": "https://github.com/ryantxu/grafana-firebase-app"},
+      {
+        "name": "MIT License",
+        "url": "https://github.com/ryantxu/grafana-firebase-app/blob/master/LICENSE"
+      }
+    ],
+    "screenshots": [],
+    "version": "%VERSION%",
+    "updated": "%TODAY%"
+  },
+
+  "includes": [],
+
+  "dependencies": {
+    "grafanaVersion": "6.3.x",
+    "plugins": []
+  }
+}
