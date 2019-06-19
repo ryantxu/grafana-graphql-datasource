@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GraphQLDatasource when querying should give error with no query defined 1`] = `[ReferenceError: fetch is not defined]`;

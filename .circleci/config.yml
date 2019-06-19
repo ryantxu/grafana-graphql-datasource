@@ -23,8 +23,8 @@ jobs:
           command: 'yarn test:badges'
       - run:
           name: zip dist
-          command: 'cd dist && zip -r9 ../lapnap-tail-datasource-dev.zip *'
+          command: 'cd dist && zip -r9 ../graphql-datasource-dev.zip *'
       - store_artifacts:
-          path: lapnap-tail-datasource-dev.zip
+          path: graphql-datasource-dev.zip
       - store_artifacts:
           path: coverage
