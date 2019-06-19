@@ -1,7 +1,7 @@
 {
   "type": "datasource",
   "name": "GraphQL",
-  "id": "lapnap-graphql-datasource",
+  "id": "ryantxu-graphql-datasource",
 
   "metrics": true,
 

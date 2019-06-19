@@ -20,6 +20,9 @@ export class GraphQLDataSource extends DataSourceApi<GraphQLQuery, GraphQLOption
   }
 
   getQueryDisplayText(query: GraphQLQuery) {
+    if (!query.request || !query.request.query) {
+      return 'Missing Query';
+    }
     return truncate(query.request.query, {length: 20});
   }
 
