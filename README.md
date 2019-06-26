@@ -14,7 +14,7 @@ jsonata:
 ```
 data.repository.ref.target.history.nodes.{
     "date":authoredDate,
-  "oid":oid,
+    "oid":oid,
     "url":commitUrl,
     "author":author.user.login,
     "authorAvatar":author.user.avatarUrl,
