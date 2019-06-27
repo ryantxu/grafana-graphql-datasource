@@ -5,10 +5,9 @@
   "scripts": {
     "build": "grafana-toolkit plugin:build",
     "test": "grafana-toolkit plugin:test",
+    "dev": "grafana-toolkit plugin:dev",
     "test:coverage": "yarn test --coverage",
-    "test:badges": "yarn test:coverage && jest-coverage-badges",
-    "prettier:check": "prettier --list-different \"src/**/*.{ts,tsx}\"",
-    "prettier:write": "prettier --list-different \"src/**/*.{ts,tsx}\" --write"
+    "test:badges": "yarn test:coverage && jest-coverage-badges"
   },
   "author": "ryantxu",
   "license": "MIT",
@@ -21,38 +20,21 @@
     "type": "git",
     "url": "https://github.com/ryantxu/grafana-firebase-app.git"
   },
-  "lint-staged": {
-    "src/**/*.{ts,tsx,json,css,js,jsx}": [
-      "prettier-eslint"
-    ]
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "singleQuote": true,
-    "bracketSpacing": false,
-    "printWidth": 100
-  },
-  "resolutions": {
-    "terser": "3.14.1"
-  },
   "dependencies": {
     "graphiql": "^0.13.0",
     "jsonata": "^1.6.4"
   },
   "devDependencies": {
-    "@grafana/toolkit": "next",
     "@grafana/ui": "next",
-    "@types/jest": "^24.0.13",
     "@types/jsonata": "^1.3.1",
     "@types/lodash": "^4.14.134",
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.13.1",
-    "enzyme-to-json": "^3.3.5",
+    "@types/jest": "^24.0.13",
+    "@types/lodash": "4.14.132",
     "jest": "^24.8.0",
-    "jest-coverage-badges": "^1.1.2",
-    "jquery": "^3.4.1",
-    "prettier": "^1.17.1",
-    "prettier-eslint-cli": "^4.7.1",
-    "ts-jest": "^24.0.2"
+    "lodash": "4.17.11",
+    "moment": "2.24.0",
+    "ts-jest": "^24.0.2",
+    "tslib": "^1.10.0",
+    "typescript": "^3.5.2"
   }
 }
