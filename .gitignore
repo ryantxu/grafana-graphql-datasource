@@ -1,6 +1,7 @@
 
 node_modules/
-
 dist/
-.rpt2_cache/
 coverage/
+artifacts/
+
+.rpt2_cache/

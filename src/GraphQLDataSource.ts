@@ -4,9 +4,9 @@ import {
   DataQueryResponse,
   DataSourceApi,
   DataSourceInstanceSettings,
-  SeriesData,
-  isSeriesData,
-  toSeriesData,
+  DataFrame,
+  isDataFrame,
+  toDataFrame,
 } from '@grafana/ui';
 
 import truncate from 'lodash/truncate';
@@ -33,7 +33,7 @@ export class GraphQLDataSource extends DataSourceApi<GraphQLQuery, GraphQLOption
     });
   }
 
-  async doSingleQuery(query: GraphQLQuery): Promise<SeriesData> {
+  async doSingleQuery(query: GraphQLQuery): Promise<DataFrame> {
     const opts = {
       method: 'POST',
       headers: {
@@ -52,11 +52,11 @@ export class GraphQLDataSource extends DataSourceApi<GraphQLQuery, GraphQLOption
       json = jsonata(query.jsonata).evaluate(json);
     }
 
-    // Make sure it looks like SeriesData
-    if (isSeriesData(json)) {
-      return json as SeriesData;
+    // Make sure it looks like DataFrame
+    if (isDataFrame(json)) {
+      return json as DataFrame;
     }
-    return toSeriesData(json);
+    return toDataFrame(json);
   }
 
   testDatasource() {

@@ -9,22 +9,29 @@ jobs:
 
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: install yarn
           command: 'sudo npm install -g yarn --quiet'
       - run:
-          name: prebuild, load dependencies
-          command: 'yarn prebuild'
+          name: install dependencies
+          command: 'yarn install --pure-lockfile'
       - run:
-          name: lint/pretty
-          command: 'yarn prettier:check'
-      - run:
-          name: test
-          command: 'yarn test:badges'
-      - run:
-          name: zip dist
-          command: 'cd dist && zip -r9 ../graphql-datasource-dev.zip *'
+          name: Run Toolkit CI
+          command: 'npx grafana-toolkit plugin:ci'
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/.cache/yarn
+      - persist_to_workspace:
+          root: .
+          paths:
+            - artifacts
+            - dist
       - store_artifacts:
-          path: graphql-datasource-dev.zip
+          path: artifacts
       - store_artifacts:
-          path: coverage
+          path: dist

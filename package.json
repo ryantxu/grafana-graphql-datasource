@@ -5,21 +5,10 @@
   "scripts": {
     "build": "grafana-toolkit plugin:build",
     "test": "grafana-toolkit plugin:test",
-    "dev": "grafana-toolkit plugin:dev",
-    "test:coverage": "yarn test --coverage",
-    "test:badges": "yarn test:coverage && jest-coverage-badges"
+    "dev": "grafana-toolkit plugin:dev"
   },
   "author": "ryantxu",
   "license": "MIT",
-  "keywords": [
-    "grafana",
-    "tail",
-    "datasource"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ryantxu/grafana-firebase-app.git"
-  },
   "dependencies": {
     "graphiql": "^0.13.0",
     "jsonata": "^1.6.4"
