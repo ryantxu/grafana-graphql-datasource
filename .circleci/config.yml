@@ -27,6 +27,8 @@ jobs:
           root: .
           paths:
             - work/*
+      - store_artifacts:
+          path: work
 
   build_backend:
     docker:
@@ -53,6 +55,8 @@ jobs:
           root: .
           paths:
             - work/*
+      - store_artifacts:
+          path: work
 
   bundle:
     docker:
@@ -73,7 +77,7 @@ jobs:
           paths:
             - work/*
       - store_artifacts:
-          path: work/artifacts
+          path: work
 
   test_master:
     docker:
