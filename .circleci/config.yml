@@ -8,8 +8,9 @@ jobs:
     working_directory: ~/plugin
     steps:
       - checkout
-      - attach_workspace:
-          at: .
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install yarn
           command: |
@@ -18,10 +19,13 @@ jobs:
       - run:
           name: Run Toolkit Build
           command: 'npx grafana-toolkit plugin:ci-build'
+      - save_cache:
+          paths:
+            - node_modules
+          key: yarn-packages-{{ checksum "yarn.lock" }}
       - persist_to_workspace:
           root: .
           paths:
-            - node_modules/*
             - work/*
 
   build_backend:
@@ -30,8 +34,9 @@ jobs:
     working_directory: ~/plugin
     steps:
       - checkout
-      - attach_workspace:
-          at: .
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Install yarn
           command: |
@@ -40,10 +45,13 @@ jobs:
       - run:
           name: Run Toolkit CI
           command: 'npx grafana-toolkit plugin:ci-build --platform XXX'
+      - save_cache:
+          paths:
+            - node_modules
+          key: yarn-packages-{{ checksum "yarn.lock" }}
       - persist_to_workspace:
           root: .
           paths:
-            - node_modules/*
             - work/*
 
   bundle:
@@ -52,6 +60,9 @@ jobs:
     working_directory: ~/plugin
     steps:
       - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - attach_workspace:
           at: .
       - run:
@@ -72,6 +83,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Setup Grafana
           command: |
@@ -93,6 +107,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Run Toolkit CI
           command: 'echo TODO...'
@@ -105,6 +122,9 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
           name: Toolkit Deploy
           command: 'npx grafana-toolkit plugin:ci-deploy'
