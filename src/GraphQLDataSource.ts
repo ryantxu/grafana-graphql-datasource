@@ -4,10 +4,13 @@ import {
   DataQueryResponse,
   DataSourceApi,
   DataSourceInstanceSettings,
+} from '@grafana/ui';
+
+import {
   DataFrame,
   isDataFrame,
   toDataFrame,
-} from '@grafana/ui';
+} from '@grafana/data';
 
 import truncate from 'lodash/truncate';
 

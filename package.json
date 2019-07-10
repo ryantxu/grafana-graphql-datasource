@@ -16,6 +16,7 @@
   "devDependencies": {
     "@grafana/toolkit": "next",
     "@grafana/ui": "next",
+    "@grafana/data": "next",
     "@types/jsonata": "^1.3.1",
     "@types/lodash": "^4.14.135"
   }
