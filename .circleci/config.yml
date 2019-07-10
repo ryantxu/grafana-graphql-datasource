@@ -11,24 +11,18 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: install yarn
-          command: 'sudo npm install -g yarn --quiet'
+          name: Install yarn
+          command: |
+            sudo npm install -g yarn --quiet
+            yarn install --pure-lockfile
       - run:
-          name: install dependencies
-          command: 'yarn install --pure-lockfile'
-      - run:
-          name: Run Toolkit CI
+          name: Run Toolkit Build
           command: 'npx grafana-toolkit plugin:ci-build'
-      - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
       - persist_to_workspace:
           root: .
           paths:
             - node_modules/*
-            - ci-work/*
+            - work/*
 
   build_backend:
     docker:
@@ -38,27 +32,19 @@ jobs:
       - checkout
       - attach_workspace:
           at: .
-      - restore_cache:
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
-          name: install yarn
-          command: 'sudo npm install -g yarn --quiet'
-      - run:
-          name: install dependencies
-          command: 'yarn install --pure-lockfile'
+          name: Install yarn
+          command: |
+            sudo npm install -g yarn --quiet
+            yarn install --pure-lockfile
       - run:
           name: Run Toolkit CI
-          command: npx grafana-toolkit plugin:ci-build --platform XXX
-      - save_cache:
-          name: Save Yarn Package Cache
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-          paths:
-            - ~/.cache/yarn
+          command: 'npx grafana-toolkit plugin:ci-build --platform XXX'
       - persist_to_workspace:
           root: .
           paths:
-            - ci-work/*
+            - node_modules/*
+            - work/*
 
   bundle:
     docker:
@@ -69,14 +55,14 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Toolkit CI
+          name: Bundle Distribution
           command: 'npx grafana-toolkit plugin:ci-bundle'
       - persist_to_workspace:
           root: .
           paths:
-            - ci-work/*
+            - work/*
       - store_artifacts:
-          path: ci-work/artifacts
+          path: work/artifacts
 
   test_master:
     docker:
@@ -87,12 +73,17 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Run Toolkit CI
-          command: 'npx grafana-toolkit plugin:ci-test --version grafana_6.2.5_amd64.deb'
+          name: Setup Grafana
+          command: |
+            npx grafana-toolkit plugin:ci-setup --installer grafana_6.2.5_amd64.deb
+      - run:
+          name: Run e2e tests
+          command: |
+            npx grafana-toolkit plugin:ci-test
       - persist_to_workspace:
           root: .
           paths:
-            - ci-work/*
+            - work/*
 
   test_latest:
     docker:
@@ -104,11 +95,7 @@ jobs:
           at: .
       - run:
           name: Run Toolkit CI
-          command: 'npx grafana-toolkit plugin:ci-test --version grafana_6.3.0-88b12325pre_amd64.deb'
-      - persist_to_workspace:
-          root: .
-          paths:
-            - ci-work/*
+          command: 'echo TODO...'
 
   deploy:
     docker:
@@ -119,15 +106,10 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: install yarn
-          command: 'sudo npm install -g yarn --quiet'
-      - run:
-          name: Run Toolkit CI
+          name: Toolkit Deploy
           command: 'npx grafana-toolkit plugin:ci-deploy'
       - store_artifacts:
-          path: ci-work/artifacts
-      - store_artifacts:
-          path: ci-work/coverage
+          path: work
 
 
 workflows:
