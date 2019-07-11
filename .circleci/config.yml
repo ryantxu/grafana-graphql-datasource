@@ -258,7 +258,7 @@ workflows:
             - bundle
       - report:
           requires:
-            - test_master
+          #  - test_master
             - test_latest
       - deploy:
           requires:
