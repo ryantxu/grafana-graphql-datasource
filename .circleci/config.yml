@@ -173,6 +173,8 @@ jobs:
             sudo cp ci/grafana-test-env/custom.ini /etc/grafana/grafana.ini
             sudo service grafana-server start
             grafana-cli --version
+            echo now wait 10 seconds...
+            sleep 10
 
       - run:
           name: Run e2e tests
