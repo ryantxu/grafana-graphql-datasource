@@ -2,7 +2,7 @@ version: 2.1
 description: # Reusable Plugin Pipeline
 
 jobs:
-  build_nodejs:
+  build_plugin:
     docker:
       - image: circleci/node:10
     working_directory: ~/plugin
@@ -28,7 +28,33 @@ jobs:
           paths:
             - ci
 
-  build_backend:
+  build_docs:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/plugin
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install yarn
+          command: |
+            sudo npm install -g yarn --quiet
+            yarn install --pure-lockfile
+      - run:
+          name: Build Docs
+          command: 'npx grafana-toolkit plugin:ci-docs'
+      - save_cache:
+          paths:
+            - node_modules
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ci
+
+  build_backend_linux_x64:
     docker:
       - image: circleci/node:10
     working_directory: ~/plugin
@@ -44,7 +70,85 @@ jobs:
             yarn install --pure-lockfile
       - run:
           name: Run Toolkit CI
-          command: 'npx grafana-toolkit plugin:ci-build --platform XXX'
+          command: 'npx grafana-toolkit plugin:ci-build --backend linux_x64'
+      - save_cache:
+          paths:
+            - node_modules
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ci
+
+  build_backend_osx:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/plugin
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install yarn
+          command: |
+            sudo npm install -g yarn --quiet
+            yarn install --pure-lockfile
+      - run:
+          name: Run Toolkit CI
+          command: 'npx grafana-toolkit plugin:ci-build --backend osx'
+      - save_cache:
+          paths:
+            - node_modules
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ci
+
+  build_backend_win64:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/plugin
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install yarn
+          command: |
+            sudo npm install -g yarn --quiet
+            yarn install --pure-lockfile
+      - run:
+          name: Run Toolkit CI
+          command: 'npx grafana-toolkit plugin:ci-build --backend win64'
+      - save_cache:
+          paths:
+            - node_modules
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+      - persist_to_workspace:
+          root: .
+          paths:
+            - ci
+
+  build_backend_arm:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/plugin
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Install yarn
+          command: |
+            sudo npm install -g yarn --quiet
+            yarn install --pure-lockfile
+      - run:
+          name: Run Toolkit CI
+          command: 'npx grafana-toolkit plugin:ci-build --backend arm'
       - save_cache:
           paths:
             - node_modules
@@ -120,6 +224,23 @@ jobs:
           name: Run Toolkit CI
           command: 'echo TODO...'
 
+  report:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/plugin
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - restore_cache:
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
+      - run:
+          name: Toolkit Report
+          command: 'npx grafana-toolkit plugin:ci-report'
+      - store_artifacts:
+          path: ci
+
   deploy:
     docker:
       - image: circleci/node:10
@@ -137,24 +258,34 @@ jobs:
       - store_artifacts:
           path: ci
 
-
 workflows:
   version: 2
   build_bundle_test_deploy:
     jobs:
-      - build_nodejs
-      - build_backend
+      - build_plugin
+      - build_docs
+      - build_backend_linux_x64
+      - build_backend_osx
+      - build_backend_win64
+      - build_backend_arm
       - bundle:
           requires:
-            - build_nodejs
-            - build_backend
+            - build_plugin
+            - build_docs
+            - build_backend_linux_x64
+            - build_backend_osx
+            - build_backend_win64
+            - build_backend_arm
       - test_master:
           requires:
             - bundle
       - test_latest:
           requires:
             - bundle
-      - deploy:
+      - report:
           requires:
             - test_master
             - test_latest
+      - deploy:
+          requires:
+            - report
