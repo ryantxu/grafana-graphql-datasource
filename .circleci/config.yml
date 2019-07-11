@@ -132,32 +132,6 @@ jobs:
           paths:
             - ci
 
-  build_backend_arm:
-    docker:
-      - image: circleci/node:10
-    working_directory: ~/plugin
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
-      - run:
-          name: Install yarn
-          command: |
-            sudo npm install -g yarn --quiet
-            yarn install --pure-lockfile
-      - run:
-          name: Run Toolkit CI
-          command: 'npx grafana-toolkit plugin:ci-build --backend arm'
-      - save_cache:
-          paths:
-            - node_modules
-          key: yarn-packages-{{ checksum "yarn.lock" }}
-      - persist_to_workspace:
-          root: .
-          paths:
-            - ci
-
   bundle:
     docker:
       - image: circleci/node:10
@@ -267,7 +241,6 @@ workflows:
       - build_backend_linux_x64
       - build_backend_osx
       - build_backend_win64
-      - build_backend_arm
       - bundle:
           requires:
             - build_plugin
@@ -275,7 +248,6 @@ workflows:
             - build_backend_linux_x64
             - build_backend_osx
             - build_backend_win64
-            - build_backend_arm
       - test_master:
           requires:
             - bundle
