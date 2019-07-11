@@ -54,7 +54,7 @@ jobs:
           paths:
             - ci
 
-  build_backend_linux_x64:
+  build_linux_x64:
     docker:
       - image: circleci/node:10
     working_directory: ~/plugin
@@ -80,7 +80,7 @@ jobs:
           paths:
             - ci
 
-  build_backend_osx:
+  build_osx:
     docker:
       - image: circleci/node:10
     working_directory: ~/plugin
@@ -106,7 +106,7 @@ jobs:
           paths:
             - ci
 
-  build_backend_win64:
+  build_win64:
     docker:
       - image: circleci/node:10
     working_directory: ~/plugin
@@ -240,16 +240,16 @@ workflows:
     jobs:
       - build_plugin
       - build_docs
-      - build_backend_linux_x64
-      - build_backend_osx
-      - build_backend_win64
+      - build_linux_x64
+      - build_osx
+      - build_win64
       - bundle:
           requires:
             - build_plugin
             - build_docs
-            - build_backend_linux_x64
-            - build_backend_osx
-            - build_backend_win64
+            - build_linux_x64
+            - build_osx
+            - build_win64
       - test_master:
           requires:
             - bundle
