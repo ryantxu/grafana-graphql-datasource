@@ -709,14 +709,14 @@
   integrity sha512-rLu3wcBWH4P5q1CGoSSH/i9hrXs7SlbRLkoq9IGuoPYNGQvDJ3pt/wmOM+XgYjIDRMVIdkUWt0RsfzF50JfnCw==
 
 "@grafana/data@next":
-  version "6.3.0-alpha.39"
-  resolved "https://registry.yarnpkg.com/@grafana/data/-/data-6.3.0-alpha.39.tgz#1c84b5a33ac7bbfb3d4c7f636b263a1fe49e9f9b"
-  integrity sha512-5zrAqww1br9fPsFPZcyO0kzs/glXpvumh8HXWtfYl8ggY6gXMr7a2eXmUd/96jUIzu9GIqo58cJqzsl3BEA56A==
+  version "6.4.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@grafana/data/-/data-6.4.0-alpha.2.tgz#29d844ad1bd97724c8d174701a2f5cf251219e55"
+  integrity sha512-lxPKZXikoTK/YPHoEex7Sb/OWtWx8Yl/vWKZjghaaED8PWwO4+ZmQLQREcYg5iIUgNHXFjeCYqx3DIwlrxDpXA==
 
 "@grafana/toolkit@next":
-  version "6.3.0-alpha.40"
-  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-6.3.0-alpha.40.tgz#2bd5294ac76aa2b2eac2e86eff4d7b2e94afb764"
-  integrity sha512-2ngreODEOzZeMbmeJVn4l1eY2D5rNDOT7T2O+m7XifQUbS9nqP7uxf0sjctVl6UkKpq10y6RbBh8tvt8CeRG5g==
+  version "6.4.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-6.4.0-alpha.3.tgz#c4f9a41d0d6edb72f682d54aa7b0f133b8c46b81"
+  integrity sha512-CDB2m629QJ4BFzCDGAS992rzMI5uUAY43c4g7A433P7Ou961MBJZATb6tK69wcsaijeWEQbx3R9crpZ+PgS8Ow==
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/preset-env" "7.4.5"
@@ -773,9 +773,9 @@
     webpack "4.35.0"
 
 "@grafana/ui@next":
-  version "6.3.0-alpha.39"
-  resolved "https://registry.yarnpkg.com/@grafana/ui/-/ui-6.3.0-alpha.39.tgz#5fb988927dd6d2ba8fa8a0d9bcedb270d2a90f83"
-  integrity sha512-GNhoNj8Jj6dJQbzY547Cycqf4XZLNwkHxPOz2rJilbbqZaoZkhiyR+j8Z0QcCy7OFJ78xQ5XHAz5SbFB759NEA==
+  version "6.4.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@grafana/ui/-/ui-6.4.0-alpha.2.tgz#39d549841e477542e07a0e0c9c474ffeffcf54a8"
+  integrity sha512-HijcpwjdJVyNR6aU9wwwsZc7RaRFDJ/VVevY/gMXvCqWhs/2hKfFpe9DPxl4Dnu0QInkgO/iKLRgf+MzohG1pg==
   dependencies:
     "@torkelo/react-select" "2.1.1"
     "@types/react-color" "2.17.0"
@@ -1272,9 +1272,9 @@
     source-map "^0.6.1"
 
 "@types/webpack-dev-server@*":
-  version "3.1.6"
-  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-3.1.6.tgz#a674bcdbe045390e6301977790d465f4aeb5b1c0"
-  integrity sha512-fysTHPetk7emf4XPj+GCbwGy56JTIUXWH7FuSABctCU2i+pczOD9bbUqd1+vT18WhqEqsr5v8SPshvm/FL3yDw==
+  version "3.1.7"
+  resolved "https://registry.yarnpkg.com/@types/webpack-dev-server/-/webpack-dev-server-3.1.7.tgz#a3e7a20366e68bc9853c730b56e994634cb78dac"
+  integrity sha512-VIRkDkBDuOkYRXQ1EG/etisQ3odo6pcjSmA1Si4VYANuNhSBsLxfuPGeGERwCx1nDKxK3aaXnicPzi0gUvxUaw==
   dependencies:
     "@types/connect-history-api-fallback" "*"
     "@types/express" "*"
@@ -5622,9 +5622,9 @@ lodash@4.17.11:
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
 
 lodash@>4.17.4, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.10:
-  version "4.17.13"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.13.tgz#0bdc3a6adc873d2f4e0c4bac285df91b64fc7b93"
-  integrity sha512-vm3/XWXfWtRua0FkUyEHBZy8kCPjErNBT9fJx8Zvs+U6zjqPbTUOpkaoum3O5uiA8sm+yNMHXfYkTUHFoMxFNA==
+  version "4.17.14"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
+  integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
 
 log-symbols@^2.2.0:
   version "2.2.0"

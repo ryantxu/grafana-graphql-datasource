@@ -2,7 +2,7 @@ version: 2.1
 description: # Reusable Plugin Pipeline
 
 jobs:
-  build_frontend:
+  build_nodejs:
     docker:
       - image: circleci/node:10
     working_directory: ~/plugin
@@ -26,9 +26,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - work/*
-      - store_artifacts:
-          path: work
+            - ci
 
   build_backend:
     docker:
@@ -54,9 +52,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - work/*
-      - store_artifacts:
-          path: work
+            - ci
 
   bundle:
     docker:
@@ -75,9 +71,9 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - work/*
+            - ci
       - store_artifacts:
-          path: work
+          path: artifacts
 
   test_master:
     docker:
@@ -101,7 +97,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - work/*
+            - ci
 
   test_latest:
     docker:
@@ -133,18 +129,18 @@ jobs:
           name: Toolkit Deploy
           command: 'npx grafana-toolkit plugin:ci-deploy'
       - store_artifacts:
-          path: work
+          path: ci
 
 
 workflows:
   version: 2
   build_bundle_test_deploy:
     jobs:
-      - build_frontend
+      - build_nodejs
       - build_backend
       - bundle:
           requires:
-            - build_frontend
+            - build_nodejs
             - build_backend
       - test_master:
           requires:
