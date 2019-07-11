@@ -709,14 +709,14 @@
   integrity sha512-rLu3wcBWH4P5q1CGoSSH/i9hrXs7SlbRLkoq9IGuoPYNGQvDJ3pt/wmOM+XgYjIDRMVIdkUWt0RsfzF50JfnCw==
 
 "@grafana/data@next":
-  version "6.4.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@grafana/data/-/data-6.4.0-alpha.2.tgz#29d844ad1bd97724c8d174701a2f5cf251219e55"
-  integrity sha512-lxPKZXikoTK/YPHoEex7Sb/OWtWx8Yl/vWKZjghaaED8PWwO4+ZmQLQREcYg5iIUgNHXFjeCYqx3DIwlrxDpXA==
+  version "6.4.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/@grafana/data/-/data-6.4.0-alpha.9.tgz#035d532c6d37d6d89d716fcc279bf17651da0e2f"
+  integrity sha512-Kr9ELUmJVaZnriSTwei9OUU3yME43m1jsdfrHJSvLuIvCefHUzAaVrny37WJ9ZCQZfykxaCn+3RQGpGBbXe/kQ==
 
 "@grafana/toolkit@next":
-  version "6.4.0-alpha.7"
-  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-6.4.0-alpha.7.tgz#d1f26dde9384f384d604bf07acfc3b865b44c47b"
-  integrity sha512-edZK8NKGUfDgNIsfPWfHU3csLyJXDhUz0DKYuxEESMF7cOtmoz18kbDBv0YRFTcVloDDAMnl0XkYZ+gwom9vwg==
+  version "6.4.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-6.4.0-alpha.9.tgz#6c404d297cad37f62955eae25c75ae006aabb461"
+  integrity sha512-b6ry5AkyNIKECzF3brkl3fT6UNS0IEequPMXOn5wxKmmh5JTqtOONd27HYYYrphxJisQYoAHrFericgb3DfGpQ==
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/preset-env" "7.4.5"
@@ -745,7 +745,7 @@
     jest "24.8.0"
     jest-cli "^24.8.0"
     jest-coverage-badges "^1.1.2"
-    lodash "4.17.11"
+    lodash "4.17.14"
     mini-css-extract-plugin "^0.7.0"
     node-sass "^4.12.0"
     optimize-css-assets-webpack-plugin "^5.0.3"
@@ -773,16 +773,16 @@
     webpack "4.35.0"
 
 "@grafana/ui@next":
-  version "6.4.0-alpha.2"
-  resolved "https://registry.yarnpkg.com/@grafana/ui/-/ui-6.4.0-alpha.2.tgz#39d549841e477542e07a0e0c9c474ffeffcf54a8"
-  integrity sha512-HijcpwjdJVyNR6aU9wwwsZc7RaRFDJ/VVevY/gMXvCqWhs/2hKfFpe9DPxl4Dnu0QInkgO/iKLRgf+MzohG1pg==
+  version "6.4.0-alpha.9"
+  resolved "https://registry.yarnpkg.com/@grafana/ui/-/ui-6.4.0-alpha.9.tgz#c84614bb389855d0f82bc11369353976c88c449d"
+  integrity sha512-tbgo4iq2BTwAk8ahlo4Yn2WOOYMmEPi2hi+bEP3PCpYweZyWtMOcKFcKNzj88KDbOKDKvWpe/Fop2KVYR01S8w==
   dependencies:
     "@torkelo/react-select" "2.1.1"
     "@types/react-color" "2.17.0"
     classnames "2.2.6"
     d3 "5.9.1"
     jquery "3.4.1"
-    lodash "4.17.11"
+    lodash "4.17.14"
     moment "2.24.0"
     papaparse "4.6.3"
     react "16.8.6"
@@ -3460,9 +3460,9 @@ ecc-jsbn@~0.1.1:
     safer-buffer "^2.1.0"
 
 electron-to-chromium@^1.3.122, electron-to-chromium@^1.3.188:
-  version "1.3.189"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.189.tgz#aa84055eb36d364a68852ad2d25e1315a1d06196"
-  integrity sha512-C26Kv6/rLNmGDaPR5HORMtTQat9aWBBKjQk9aFtN1Bk6cQBSw8cYdsel/mcrQlNlMMjt1sAKsTYqf77+sK2uTw==
+  version "1.3.190"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.190.tgz#5bf599519983bfffd9d4387817039a3ed7ca085f"
+  integrity sha512-cs9WnTnGBGnYYVFMCtLmr9jXNTOkdp95RLz5VhwzDn7dErg1Lnt9o4d01gEH69XlmRKWUr91Yu1hA+Hi8qW0PA==
 
 elliptic@^6.0.0:
   version "6.5.0"
@@ -5596,7 +5596,7 @@ lodash.tail@^4.1.1:
   resolved "https://registry.yarnpkg.com/lodash.tail/-/lodash.tail-4.1.1.tgz#d2333a36d9e7717c8ad2f7cacafec7c32b444664"
   integrity sha1-0jM6NtnncXyK0vfKyv7HwytERmQ=
 
-lodash.template@^4.2.4:
+lodash.template@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.template/-/lodash.template-4.5.0.tgz#f976195cf3f347d0d5f52483569fe8031ccce8ab"
   integrity sha512-84vYFxIkmidUiFxidA/KjjH9pAycqW+h980j7Fuz5qxRtO9pgB7MDFTdys1N7A5mcucRiDyEq4fusljItR1T/A==
@@ -5616,12 +5616,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@4.17.11:
-  version "4.17.11"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
-  integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
-
-lodash@>4.17.4, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.10:
+lodash@4.17.14, lodash@>4.17.4, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.4, lodash@^4.17.5, lodash@~4.17.10:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
   integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
@@ -6939,11 +6934,11 @@ postcss-image-set-function@^3.0.1:
     postcss-values-parser "^2.0.0"
 
 postcss-initial@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/postcss-initial/-/postcss-initial-3.0.0.tgz#1772512faf11421b791fb2ca6879df5f68aa0517"
-  integrity sha512-WzrqZ5nG9R9fUtrA+we92R4jhVvEB32IIRTzfIG/PLL8UV4CvbF1ugTEHEFX6vWxl41Xt5RTCJPEZkuWzrOM+Q==
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/postcss-initial/-/postcss-initial-3.0.1.tgz#99d319669a13d6c06ef8e70d852f68cb1b399b61"
+  integrity sha512-I2Sz83ZSHybMNh02xQDK609lZ1/QOyYeuizCjzEhlMgeV/HcDJapQiH4yTqLjZss0X6/6VvKFXUeObaHpJoINw==
   dependencies:
-    lodash.template "^4.2.4"
+    lodash.template "^4.5.0"
     postcss "^7.0.2"
 
 postcss-lab-function@^2.0.1:
@@ -8457,9 +8452,9 @@ spdx-expression-parse@^3.0.0:
     spdx-license-ids "^3.0.0"
 
 spdx-license-ids@^3.0.0:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.4.tgz#75ecd1a88de8c184ef015eafb51b5b48bfd11bb1"
-  integrity sha512-7j8LYJLeY/Yb6ACbQ7F76qy5jHkp0U6jgBfJsk97bwWlVUnUWsAgpyaCvo17h0/RQGnQ036tVDomiwoI4pDkQA==
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/spdx-license-ids/-/spdx-license-ids-3.0.5.tgz#3694b5804567a458d3c8045842a6358632f62654"
+  integrity sha512-J+FWzZoynJEXGphVIS+XEh3kFSjZX/1i9gFBaWQcB+/tmpe2qUsSBABpcxqxnAxFdiUFEgAX1bjYGQvIZmoz9Q==
 
 split-string@^3.0.1, split-string@^3.0.2:
   version "3.1.0"
