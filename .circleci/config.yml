@@ -173,7 +173,9 @@ jobs:
             sudo apt-get install locate
             sudo updatedb
             sudo locate grafana
-            sudo cp ci/grafana-test-env/custom.ini /usr/share/grafana/config/custom.ini
+            cat /etc/grafana/grafana.ini
+            echo ------------------------
+            sudo cp ci/grafana-test-env/custom.ini /usr/share/grafana/conf/custom.ini
             sudo cp ci/grafana-test-env/custom.ini /etc/grafana/grafana.ini
             sudo service grafana-server start
             grafana-cli --version
@@ -235,8 +237,6 @@ jobs:
       - run:
           name: Toolkit Deploy
           command: 'npx grafana-toolkit plugin:ci-deploy'
-      - store_artifacts:
-          path: ci
 
 workflows:
   version: 2
