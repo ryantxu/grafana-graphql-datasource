@@ -1,6 +1,6 @@
-import {GraphQLDataSource} from './GraphQLDataSource';
-import {GraphQLOptions, GraphQLQuery} from './types';
-import {DataSourceInstanceSettings, PluginMeta, DataQueryRequest} from '@grafana/ui';
+import { GraphQLDataSource } from './GraphQLDataSource';
+import { GraphQLOptions, GraphQLQuery } from './types';
+import { DataSourceInstanceSettings, PluginMeta, DataQueryRequest } from '@grafana/ui';
 
 describe('GraphQLDatasource', () => {
   const instanceSettings: DataSourceInstanceSettings<GraphQLOptions> = {

@@ -1,20 +1,11 @@
 // Types
-import {
-  DataQueryRequest,
-  DataQueryResponse,
-  DataSourceApi,
-  DataSourceInstanceSettings,
-} from '@grafana/ui';
+import { DataQueryRequest, DataQueryResponse, DataSourceApi, DataSourceInstanceSettings } from '@grafana/ui';
 
-import {
-  DataFrame,
-  isDataFrame,
-  toDataFrame,
-} from '@grafana/data';
+import { DataFrame, isDataFrame, toDataFrame } from '@grafana/data';
 
 import truncate from 'lodash/truncate';
 
-import {GraphQLQuery, GraphQLOptions} from './types';
+import { GraphQLQuery, GraphQLOptions } from './types';
 import jsonata from 'jsonata';
 
 export class GraphQLDataSource extends DataSourceApi<GraphQLQuery, GraphQLOptions> {
@@ -26,13 +17,13 @@ export class GraphQLDataSource extends DataSourceApi<GraphQLQuery, GraphQLOption
     if (!query.request || !query.request.query) {
       return 'Missing Query';
     }
-    return truncate(query.request.query, {length: 20});
+    return truncate(query.request.query, { length: 20 });
   }
 
   query(options: DataQueryRequest<GraphQLQuery>): Promise<DataQueryResponse> {
     const all = options.targets.map(q => this.doSingleQuery(q));
     return Promise.all(all).then(data => {
-      return {data};
+      return { data };
     });
   }
 

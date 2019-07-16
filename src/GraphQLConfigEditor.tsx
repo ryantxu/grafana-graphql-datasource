@@ -1,10 +1,10 @@
 // Libraries
-import React, {PureComponent, ChangeEvent} from 'react';
+import React, { PureComponent, ChangeEvent } from 'react';
 
 // Types
-import {GraphQLOptions} from './types';
+import { GraphQLOptions } from './types';
 
-import {DataSourcePluginOptionsEditorProps, DataSourceSettings, FormField} from '@grafana/ui';
+import { DataSourcePluginOptionsEditorProps, DataSourceSettings, FormField } from '@grafana/ui';
 
 type GraphQLSettings = DataSourceSettings<GraphQLOptions>;
 
@@ -18,7 +18,7 @@ export class GraphQLConfigEditor extends PureComponent<Props, State> {
   componentDidMount() {}
 
   onURLChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const {onOptionsChange, options} = this.props;
+    const { onOptionsChange, options } = this.props;
     onOptionsChange({
       ...options,
       url: event.target.value,
@@ -27,17 +27,17 @@ export class GraphQLConfigEditor extends PureComponent<Props, State> {
   };
 
   onAuthChange = (event: ChangeEvent<HTMLInputElement>) => {
-    const {onOptionsChange, options} = this.props;
+    const { onOptionsChange, options } = this.props;
     const jsonData = {
       ...options.jsonData,
       authHeader: event.target.value,
     };
-    onOptionsChange({...options, jsonData});
+    onOptionsChange({ ...options, jsonData });
   };
 
   render() {
-    const {options} = this.props;
-    const {jsonData} = options;
+    const { options } = this.props;
+    const { jsonData } = options;
 
     return (
       <div className="gf-form-group">
@@ -52,13 +52,7 @@ export class GraphQLConfigEditor extends PureComponent<Props, State> {
           />
         </div>
         <div className="gf-form">
-          <FormField
-            label="Prefix"
-            labelWidth={6}
-            onChange={this.onAuthChange}
-            value={jsonData.authHeader}
-            placeholder="Authentication Header"
-          />
+          <FormField label="Prefix" labelWidth={6} onChange={this.onAuthChange} value={jsonData.authHeader} placeholder="Authentication Header" />
         </div>
       </div>
     );
