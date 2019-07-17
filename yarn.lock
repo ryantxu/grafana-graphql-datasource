@@ -708,15 +708,15 @@
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.8.2.tgz#576ff7fb1230185b619a75d258cbc98f0867a8dc"
   integrity sha512-rLu3wcBWH4P5q1CGoSSH/i9hrXs7SlbRLkoq9IGuoPYNGQvDJ3pt/wmOM+XgYjIDRMVIdkUWt0RsfzF50JfnCw==
 
-"@grafana/data@6.4.0-alpha.18", "@grafana/data@next":
-  version "6.4.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/@grafana/data/-/data-6.4.0-alpha.18.tgz#08556cb57755e0d55b0bcfc897fb2b6269ab6cbc"
-  integrity sha512-Crajf1Jazs3HlKqmr7NqvI9P5Nda5V6Q37mBmH1dhscqHHcChFr6RAq404h2EWSo1IfWAn4E8oX/Xbh/iyCeIw==
+"@grafana/data@6.4.0-alpha.21":
+  version "6.4.0-alpha.21"
+  resolved "https://registry.yarnpkg.com/@grafana/data/-/data-6.4.0-alpha.21.tgz#eccad3904b7838c0f720cee5a29c07f52550203d"
+  integrity sha512-y+f90/l8iNRme1Rc85I8qQKdTkhaPvsUx2cMge2nuDlwuJLPCK2WcDQo0zJ/owv3I+N4K7vHhxMeMQW3YBiiZw==
 
-"@grafana/toolkit@next":
-  version "6.4.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-6.4.0-alpha.18.tgz#aaa0ff9ca3a30684c483124db5863178c997f44d"
-  integrity sha512-NEkSWEMyp7JpLVxUxzHI+Fw4Tk4+a0RvgZLMXNsDraQIYjzDq5Xn6Kjh/Km7nO7ZzIeLzN5VzYcomcsFpHR+ag==
+"@grafana/toolkit@6.4.0-alpha.21":
+  version "6.4.0-alpha.21"
+  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-6.4.0-alpha.21.tgz#d637af2ecc20b060300682dd5b69175d970dfbab"
+  integrity sha512-o7an3LONxa12Gg4e8V/++WuOML8O9ibxgzAlaURYp1f48uF/kQZyaHpOlBfKHTc9uNs4OoxD5WwYZ2moid35Tw==
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/preset-env" "7.4.5"
@@ -773,12 +773,12 @@
     url-loader "^2.0.1"
     webpack "4.35.0"
 
-"@grafana/ui@next":
-  version "6.4.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/@grafana/ui/-/ui-6.4.0-alpha.18.tgz#7a828ba9f8723b25e73e512fffc5009731d5cb01"
-  integrity sha512-pRt4B6g+WhqVvjavCdZ9pHgNAIKEQITtTO+i6O7YEJlX2CGsCxA6f38xj3fVo8W/W3i/mB9g1sC0tM7xK4OT/A==
+"@grafana/ui@6.4.0-alpha.21":
+  version "6.4.0-alpha.21"
+  resolved "https://registry.yarnpkg.com/@grafana/ui/-/ui-6.4.0-alpha.21.tgz#56c30ca51bfe7e5823c9101b6e5421f0338c0c6e"
+  integrity sha512-V7V3oSzvYCi1dqRhBRvOVHxE16mWe3hu/4ZdQUmgRtTteTpwj9GOcHrAKy54YaYOM4sZ8cq2JwEWDwGDDy2lRg==
   dependencies:
-    "@grafana/data" "6.4.0-alpha.18"
+    "@grafana/data" "6.4.0-alpha.21"
     "@torkelo/react-select" "2.1.1"
     "@types/react-color" "2.17.0"
     classnames "2.2.6"
