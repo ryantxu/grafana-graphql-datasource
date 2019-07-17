@@ -201,7 +201,8 @@ jobs:
       - run:
           name: Setup Grafana (local install)
           command: |
-            wget https://dl.grafana.com/oss/release/grafana_6.3.0-beta1_amd64.deb
+             echo TODO
+      #      wget https://dl.grafana.com/oss/release/grafana_6.3.0-beta1_amd64.deb
       #       sudo apt-get install -y adduser libfontconfig1
       #       sudo dpkg -i grafana_6.3.0-beta1_amd64.deb
       #       sudo apt-get install locate
@@ -214,10 +215,11 @@ jobs:
       #       sudo service grafana-server start
       #       sudo grafana-cli --version
 
-      # - run:
-      #     name: Run e2e tests
-      #     command: |
-      #       npx grafana-toolkit plugin:ci-test
+      - run:
+          name: Run e2e tests
+          command: |
+            set +e
+            npx grafana-toolkit plugin:ci-test
       - persist_to_workspace:
           root: .
           paths:
