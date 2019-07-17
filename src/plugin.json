@@ -24,7 +24,8 @@
     ],
     "screenshots": [],
     "version": "%VERSION%",
-    "updated": "%TODAY%"
+    "updated": "%TODAY%",
+    "gitHash": "%GITHASH%"
   },
 
   "includes": [],
