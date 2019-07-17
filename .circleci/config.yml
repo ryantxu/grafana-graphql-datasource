@@ -138,11 +138,11 @@ jobs:
     working_directory: ~/plugin
     steps:
       - checkout
+      - attach_workspace:
+          at: .
       - restore_cache:
           keys:
             - yarn-packages-{{ checksum "yarn.lock" }}
-      - attach_workspace:
-          at: .
       - run:
           name: Package Distribution
           command: 'npx grafana-toolkit plugin:ci-package'

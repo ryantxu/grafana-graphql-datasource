@@ -16,13 +16,16 @@
       "large": "img/GraphQL.svg"
     },
     "links": [
-      {"name": "Project site", "url": "https://github.com/ryantxu/grafana-firebase-app"},
+      {
+        "name": "Project site",
+        "url": "https://github.com/ryantxu/grafana-firebase-app"
+      },
       {
         "name": "MIT License",
         "url": "https://github.com/ryantxu/grafana-firebase-app/blob/master/LICENSE"
       },
       {
-        "name": "Source",
+        "name": "Source Code",
         "url": "https://github.com/ryantxu/grafana-graphql-datasource/tree/%GITHASH%"
       }
     ],
