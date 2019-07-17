@@ -257,10 +257,10 @@ workflows:
       - test_master:
           requires:
             - package
-      - test_latest:
-          requires:
-            - package
+      # - test_latest:
+      #     requires:
+      #       - package
       - report:
           requires:
             - test_master
-            - test_latest
+         #   - test_latest
