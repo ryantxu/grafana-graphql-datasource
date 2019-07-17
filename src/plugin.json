@@ -10,7 +10,7 @@
     "author": {
       "name": "Ryan"
     },
-    "keywords": ["files", "csv"],
+    "keywords": ["github"],
     "logos": {
       "small": "img/GraphQL.svg",
       "large": "img/GraphQL.svg"
@@ -23,16 +23,11 @@
       {
         "name": "MIT License",
         "url": "https://github.com/ryantxu/grafana-firebase-app/blob/master/LICENSE"
-      },
-      {
-        "name": "Source Code",
-        "url": "https://github.com/ryantxu/grafana-graphql-datasource/tree/%GITHASH%"
       }
     ],
     "screenshots": [],
     "version": "%VERSION%",
-    "updated": "%TODAY%",
-    "gitHash": "%GITHASH%"
+    "updated": "%TODAY%"
   },
 
   "includes": [],
