@@ -20,6 +20,10 @@
       {
         "name": "MIT License",
         "url": "https://github.com/ryantxu/grafana-firebase-app/blob/master/LICENSE"
+      },
+      {
+        "name": "Source",
+        "url": "https://github.com/ryantxu/grafana-graphql-datasource/tree/%GITHASH%"
       }
     ],
     "screenshots": [],
