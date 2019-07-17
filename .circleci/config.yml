@@ -185,7 +185,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - ci
+            - ci/jobs/test_master
 
   test_latest:
     docker:
@@ -223,7 +223,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - ci
+            - ci/jobs/test_latest
 
   report:
     docker:
