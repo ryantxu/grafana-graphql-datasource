@@ -150,8 +150,6 @@ jobs:
           root: .
           paths:
             - ci
-      - store_artifacts:
-          path: ci
 
   test_master:
     docker:
@@ -241,21 +239,6 @@ jobs:
           command: 'npx grafana-toolkit plugin:ci-report'
       - store_artifacts:
           path: ci
-
-  deploy:
-    docker:
-      - image: circleci/node:10
-    working_directory: ~/plugin
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - restore_cache:
-          keys:
-            - yarn-packages-{{ checksum "yarn.lock" }}
-      - run:
-          name: Toolkit Deploy
-          command: 'npx grafana-toolkit plugin:ci-deploy'
 
 workflows:
   version: 2
