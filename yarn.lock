@@ -708,15 +708,15 @@
   resolved "https://registry.yarnpkg.com/@emotion/utils/-/utils-0.8.2.tgz#576ff7fb1230185b619a75d258cbc98f0867a8dc"
   integrity sha512-rLu3wcBWH4P5q1CGoSSH/i9hrXs7SlbRLkoq9IGuoPYNGQvDJ3pt/wmOM+XgYjIDRMVIdkUWt0RsfzF50JfnCw==
 
-"@grafana/data@6.4.0-alpha.16", "@grafana/data@next":
-  version "6.4.0-alpha.16"
-  resolved "https://registry.yarnpkg.com/@grafana/data/-/data-6.4.0-alpha.16.tgz#5cc2c234c80d3e2977a2fe80dafc4140f63d3a8c"
-  integrity sha512-sRR8r6NeqF8b0NVyRMCoHzhNjuZMutNI2EZYzwAsPNH21mVRvLHTZZpZFkQFQNm8JZUjU2H6HnvVhyHLyIav3w==
+"@grafana/data@6.4.0-alpha.17", "@grafana/data@next":
+  version "6.4.0-alpha.17"
+  resolved "https://registry.yarnpkg.com/@grafana/data/-/data-6.4.0-alpha.17.tgz#3cb7042e0240360ca1d536adda5775b10fb50458"
+  integrity sha512-UJExl9Kmb+PmVL9SVm/BnEPVbWKl/EmHY/5jxI+xlfqWeUD4C4dx0KCmNbUZ1ib9fg76jwqTiPGxax5MabL7Pg==
 
 "@grafana/toolkit@next":
-  version "6.4.0-alpha.16"
-  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-6.4.0-alpha.16.tgz#7c12a812247cef6e13cde01683d04772906836f0"
-  integrity sha512-wd+ZQeeYod7YLDBlVLn/UpruPaVl+JRvydzlOoMyCdJUjbAjyRWp1bfzbr9oqXT4e+GqdojFkZiYFdt6wVDxzw==
+  version "6.4.0-alpha.17"
+  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-6.4.0-alpha.17.tgz#547bd739253a83c88e69a1a790d0d144b3dca5e8"
+  integrity sha512-JZE/Mf+s24WOfqzYSf+tiHq/sO41TxmWz472DVanZBs8oYb+ZciWORHZZQgkQKiT/dLGLSouDKU7xSkWeukmHw==
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/preset-env" "7.4.5"
@@ -774,11 +774,11 @@
     webpack "4.35.0"
 
 "@grafana/ui@next":
-  version "6.4.0-alpha.16"
-  resolved "https://registry.yarnpkg.com/@grafana/ui/-/ui-6.4.0-alpha.16.tgz#802bd1037a78e9b2db8f53760b0f6a4820fa7f65"
-  integrity sha512-me0+PGFyw3QBM5QRpa8spxUZsYDm/sse+zzrWrjCHDlNsnqIban/qdCyYvk4LOclUCZxMCkX3HQdnC3vjiStQA==
+  version "6.4.0-alpha.17"
+  resolved "https://registry.yarnpkg.com/@grafana/ui/-/ui-6.4.0-alpha.17.tgz#d00f6545f5522de044df03a3be1135eb66b307bc"
+  integrity sha512-Xc8/ZHnInQfQPCcedKFLNqzbBItsKkjDJApkL/NJf1biWEcyVtezxlVyePIZX/7ox8vuWO/1E9dR6cXUjKPvSg==
   dependencies:
-    "@grafana/data" "6.4.0-alpha.16"
+    "@grafana/data" "6.4.0-alpha.17"
     "@torkelo/react-select" "2.1.1"
     "@types/react-color" "2.17.0"
     classnames "2.2.6"
@@ -1181,9 +1181,9 @@
   integrity sha512-FwI9gX75FgVBJ7ywgnq/P7tw+/o1GUbtP0KzbtusLigAOgIgNISRK0ZPl4qertvXSIE8YbsVJueQ90cDt9YYyw==
 
 "@types/node@*", "@types/node@^12.0.4":
-  version "12.6.5"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.6.5.tgz#716f6b4258d04c0439e19b35b33242d431603368"
-  integrity sha512-8IUaNE8dbiVyv6wdi3mgrxZ9IYfDaulRY8A2MKiDugYj/tjPz/+JdwuC/uuBlGb+yTapiTratHfksPCy8trPQg==
+  version "12.6.6"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-12.6.6.tgz#831587377c35bb28fa33b6fe5f849a26a3f4a412"
+  integrity sha512-SMgj3x28MkJyHdWaMv/g/ca3LYDi5gR7O8mX0VKazvFOnmlDXctSEdd/8jfSqozjKFK1R9If1QZWkafX7yQTpA==
 
 "@types/prop-types@*":
   version "15.7.1"
