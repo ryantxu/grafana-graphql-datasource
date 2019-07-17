@@ -132,7 +132,7 @@ jobs:
           paths:
             - ci
 
-  bundle:
+  package:
     docker:
       - image: circleci/node:10
     working_directory: ~/plugin
@@ -144,8 +144,8 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: Bundle Distribution
-          command: 'npx grafana-toolkit plugin:ci-bundle'
+          name: Package Distribution
+          command: 'npx grafana-toolkit plugin:ci-package'
       - persist_to_workspace:
           root: .
           paths:
@@ -265,7 +265,7 @@ workflows:
       - build_docs
       - build_osx
       - build_win64
-      - bundle:
+      - package:
           requires:
             - build_plugin
             - build_docs
@@ -273,10 +273,10 @@ workflows:
             - build_win64
       - test_master:
           requires:
-            - bundle
+            - package
       - test_latest:
           requires:
-            - bundle
+            - package
       - report:
           requires:
             - test_master
