@@ -3,5 +3,4 @@ node_modules/
 dist/
 coverage/
 artifacts/
-
-.rpt2_cache/
+ci/
