@@ -202,22 +202,22 @@ jobs:
           name: Setup Grafana (local install)
           command: |
             wget https://dl.grafana.com/oss/release/grafana_6.3.0-beta1_amd64.deb
-            sudo apt-get install -y adduser libfontconfig1
-            sudo dpkg -i grafana_6.3.0-beta1_amd64.deb
-            sudo apt-get install locate
-            sudo updatedb
-            sudo locate grafana
-            sudo cat /etc/grafana/grafana.ini
-            sudo echo ------------------------
-            sudo cp ci/grafana-test-env/custom.ini /usr/share/grafana/conf/custom.ini
-            sudo cp ci/grafana-test-env/custom.ini /etc/grafana/grafana.ini
-            sudo service grafana-server start
-            sudo grafana-cli --version
+      #       sudo apt-get install -y adduser libfontconfig1
+      #       sudo dpkg -i grafana_6.3.0-beta1_amd64.deb
+      #       sudo apt-get install locate
+      #       sudo updatedb
+      #       sudo locate grafana
+      #       sudo cat /etc/grafana/grafana.ini
+      #       sudo echo ------------------------
+      #       sudo cp ci/grafana-test-env/custom.ini /usr/share/grafana/conf/custom.ini
+      #       sudo cp ci/grafana-test-env/custom.ini /etc/grafana/grafana.ini
+      #       sudo service grafana-server start
+      #       sudo grafana-cli --version
 
-      - run:
-          name: Run e2e tests
-          command: |
-            npx grafana-toolkit plugin:ci-test
+      # - run:
+      #     name: Run e2e tests
+      #     command: |
+      #       npx grafana-toolkit plugin:ci-test
       - persist_to_workspace:
           root: .
           paths:
@@ -257,10 +257,10 @@ workflows:
       - test_master:
           requires:
             - package
-      # - test_latest:
-      #     requires:
-      #       - package
+      - test_latest:
+          requires:
+            - package
       - report:
           requires:
             - test_master
-         #   - test_latest
+            - test_latest
