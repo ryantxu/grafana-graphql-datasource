@@ -152,6 +152,7 @@ jobs:
             - ci/jobs/package
             - ci/packages
             - ci/docs
+            - ci/dist
             - ci/grafana-test-env
 
   test_master:
