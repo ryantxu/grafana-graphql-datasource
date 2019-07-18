@@ -14,9 +14,9 @@
     "jsonata": "^1.6.4"
   },
   "devDependencies": {
-    "@grafana/data": "6.4.0-alpha.21",
-    "@grafana/toolkit": "^6.4.0-alpha.22",
-    "@grafana/ui": "6.4.0-alpha.21",
+    "@grafana/data": "latest",
+    "@grafana/toolkit": "next",
+    "@grafana/ui": "latest",
     "@types/jsonata": "^1.3.1",
     "@types/lodash": "^4.14.135"
   }
