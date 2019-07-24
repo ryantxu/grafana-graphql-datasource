@@ -726,9 +726,9 @@
   integrity sha512-SHvtDQuJ+LorjkF3bGkTdq2mCW2OmExhMlvhQRH+6qwbodoARqD/8X3dKFLw9D+PwW0H4nFYk2LQbdZKQXZRNw==
 
 "@grafana/toolkit@next":
-  version "6.4.0-alpha.33"
-  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-6.4.0-alpha.33.tgz#b7804f666c47c240e02898449a8bdbd3e597ca76"
-  integrity sha512-JpNWAMGiwcVDO1vDqb5+VqQdVesUzIjhYAdErZpCbE/1/TZmUYAY6RjXSbuJGf9f+9TvGZQjzjHHjtljHnXoWA==
+  version "6.4.0-alpha.35"
+  resolved "https://registry.yarnpkg.com/@grafana/toolkit/-/toolkit-6.4.0-alpha.35.tgz#83a4c26c6e9414142d0f37a3131c12a5202493b9"
+  integrity sha512-3YkFD42kfp1Q8ISFjLstNAVe+422BHfmoJP7BiM8V/W5UPZmPx/1G16A6FDvauHTulpR1oH5IHBc/vecjrUlGg==
   dependencies:
     "@babel/core" "7.4.5"
     "@babel/preset-env" "7.4.5"
@@ -1854,9 +1854,9 @@ autoprefixer@^9.4.9:
     postcss-value-parser "^4.0.0"
 
 aws-sdk@^2.495.0:
-  version "2.498.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.498.0.tgz#42e05965166a01b45e026e4922926df4cd160fc5"
-  integrity sha512-xyIBgPylTWGfwOUgDzXMIcB5uVdBfTAfA+cOEl/tCsq88kNm4LWuZtv/O9g5hZYFQeUViQMiRwpFUAf9v8rcCQ==
+  version "2.499.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.499.0.tgz#280955126c4bf245c154eeb00cac6ba987c91c68"
+  integrity sha512-Uz9147/QJ2e14LwvnLngkCjjiII3cGKSYggd7ywyYWJciPZPNMPJFSbWdCSjSqiFoRVsHdHQ8bBPhr+Sn22zSw==
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
