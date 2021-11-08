@@ -10,7 +10,7 @@
   "author": "ryantxu",
   "license": "MIT",
   "dependencies": {
-    "graphiql": "^0.13.0",
+    "graphiql": "^1.4.7",
     "jsonata": "^1.6.4"
   },
   "devDependencies": {
